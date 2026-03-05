@@ -817,17 +817,20 @@ h2 {
   pointer-events: none;
 }
 
-.calendly-container .calendly-inline-widget {
+.calendly-container .calendly-inline-widget,
+.calendly-container .calendly-embed-frame {
   min-height: 760px;
   opacity: 0.01;
   transition: opacity 0.22s ease;
+  border: 0;
 }
 
 .calendly-container[data-calendly-state="ready"] .calendly-loading {
   opacity: 0;
 }
 
-.calendly-container[data-calendly-state="ready"] .calendly-inline-widget {
+.calendly-container[data-calendly-state="ready"] .calendly-inline-widget,
+.calendly-container[data-calendly-state="ready"] .calendly-embed-frame {
   opacity: 1;
 }
 

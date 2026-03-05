@@ -29,24 +29,23 @@
   <link rel="dns-prefetch" href="//assets.calendly.com" />
   <link rel="dns-prefetch" href="//calendly.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script src="../assets/theme.js" defer></script>
+  <link rel="stylesheet" href="/SASB_CaseStudy/assets/style.css" />
+  <script src="/assets/theme.js" defer></script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="brand" href="../">
+      <a class="brand" href="/SASB_CaseStudy/">
         <span class="brand-dot" aria-hidden="true"></span>
         SASB
       </a>
       <nav class="steps" aria-label="Fortschritt">
-        <a class="step-dot done" href="../" aria-label="Schritt 1">1</a>
+        <a class="step-dot done" href="/SASB_CaseStudy/" aria-label="Schritt 1">1</a>
         <span class="step-line done"></span>
-        <a class="step-dot done" href="../loesung/" aria-label="Schritt 2">2</a>
+        <a class="step-dot done" href="/SASB_CaseStudy/loesung/" aria-label="Schritt 2">2</a>
         <span class="step-line done"></span>
-        <a class="step-dot done" href="../ablauf/" aria-label="Schritt 3">3</a>
+        <a class="step-dot done" href="/SASB_CaseStudy/ablauf/" aria-label="Schritt 3">3</a>
         <span class="step-line done"></span>
         <span class="step-dot active" aria-current="step" aria-label="Schritt 4">4</span>
       </nav>
@@ -75,10 +74,14 @@
         <div class="calendly-loading" role="status" aria-live="polite">
           <span class="calendly-loading-text">Kalender wird geladen …</span>
         </div>
-        <div class="calendly-inline-widget"
-             data-url="https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach"
-             style="min-width:280px;height:760px;">
-        </div>
+        <iframe
+          class="calendly-embed-frame"
+          src="https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach"
+          title="Termin buchen"
+          loading="eager"
+          frameborder="0"
+          style="width:100%;min-width:280px;height:760px;"
+        ></iframe>
       </div>
 
       <p class="contact-divider reveal d2">Oder direkt Kontakt aufnehmen</p>
@@ -130,7 +133,7 @@
       </div>
 
       <nav class="wizard-nav reveal d3">
-        <a class="btn btn-back" href="../ablauf/">&larr; Zurück</a>
+        <a class="btn btn-back" href="/SASB_CaseStudy/ablauf/">&larr; Zurück</a>
         <span></span>
       </nav>
 
@@ -146,60 +149,43 @@
   <script>
     (() => {
       const container = document.querySelector('.calendly-container');
-      const widget = container?.querySelector('.calendly-inline-widget');
+      const frame = container?.querySelector('.calendly-embed-frame');
       const loadingText = container?.querySelector('.calendly-loading-text');
-      if (!container || !widget || !loadingText) return;
+      if (!container || !frame || !loadingText) return;
 
       const bookingUrl =
-        widget.getAttribute('data-url') ||
+        frame.getAttribute('src') ||
         'https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach';
       let settled = false;
-      let observer;
       let timeoutId = 0;
 
       const markReady = () => {
         if (settled) return;
         settled = true;
         window.clearTimeout(timeoutId);
-        if (observer) observer.disconnect();
         container.setAttribute('data-calendly-state', 'ready');
       };
 
       const markError = () => {
         if (settled) return;
         settled = true;
-        if (observer) observer.disconnect();
         container.setAttribute('data-calendly-state', 'error');
         loadingText.innerHTML = `Kalender braucht länger als erwartet. <a href="${bookingUrl}" target="_blank" rel="noopener noreferrer">Direkt bei Calendly öffnen</a>.`;
       };
 
-      const hasFrame = () => Boolean(widget.querySelector('iframe'));
-      if (hasFrame()) {
-        markReady();
-        return;
+      try {
+        const warmedAt = Number(sessionStorage.getItem('sasb-calendly-warmed-at'));
+        if (Number.isFinite(warmedAt) && Date.now() - warmedAt < 10 * 60 * 1000) {
+          markReady();
+        }
+      } catch (error) {
+        // Continue with normal load tracking if sessionStorage is unavailable.
       }
 
-      observer = new MutationObserver(() => {
-        if (hasFrame()) {
-          observer.disconnect();
-          markReady();
-        }
-      });
-      observer.observe(widget, { childList: true, subtree: true });
-
-      window.addEventListener('message', (event) => {
-        if (!event.origin.includes('calendly.com')) return;
-        if (typeof event.data === 'object' && String(event.data.event || '').startsWith('calendly.')) {
-          markReady();
-        }
-      });
+      frame.addEventListener('load', markReady, { once: true });
 
       timeoutId = window.setTimeout(() => {
-        if (!hasFrame()) {
-          markError();
-          return;
-        }
-        markReady();
+        markError();
       }, 12000);
     })();
   </script>

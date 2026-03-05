@@ -29,25 +29,25 @@
   <link rel="dns-prefetch" href="//assets.calendly.com" />
   <link rel="dns-prefetch" href="//calendly.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/style.css" />
-  <script src="../assets/theme.js" defer></script>
+  <link rel="stylesheet" href="/SASB_CaseStudy/assets/style.css" />
+  <script src="/assets/theme.js" defer></script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="brand" href="../">
+      <a class="brand" href="/SASB_CaseStudy/">
         <span class="brand-dot" aria-hidden="true"></span>
         SASB
       </a>
       <nav class="steps" aria-label="Fortschritt">
-        <a class="step-dot done" href="../" aria-label="Schritt 1">1</a>
+        <a class="step-dot done" href="/SASB_CaseStudy/" aria-label="Schritt 1">1</a>
         <span class="step-line done"></span>
-        <a class="step-dot done" href="../loesung/" aria-label="Schritt 2">2</a>
+        <a class="step-dot done" href="/SASB_CaseStudy/loesung/" aria-label="Schritt 2">2</a>
         <span class="step-line done"></span>
         <span class="step-dot active" aria-current="step" aria-label="Schritt 3">3</span>
         <span class="step-line done"></span>
-        <a class="step-dot" href="../termin/" aria-label="Schritt 4">4</a>
+        <a class="step-dot" href="/SASB_CaseStudy/termin/" aria-label="Schritt 4">4</a>
       </nav>
       <div class="links"></div>
     </div>
@@ -125,8 +125,8 @@
       </div>
 
       <nav class="wizard-nav reveal d3">
-        <a class="btn btn-back" href="../loesung/">&larr; Zurück</a>
-        <a class="btn btn-next" href="../termin/">Gespräch starten &rarr;</a>
+        <a class="btn btn-back" href="/SASB_CaseStudy/loesung/">&larr; Zurück</a>
+        <a class="btn btn-next" href="/SASB_CaseStudy/termin/">Gespräch starten &rarr;</a>
       </nav>
 
     </div>
@@ -140,8 +140,9 @@
 
   <script>
     (() => {
-      const TERMIN_URL = '../termin/';
-      const CALENDLY_WIDGET_URL = 'https://assets.calendly.com/assets/external/widget.js';
+      const TERMIN_URL = '/SASB_CaseStudy/termin/';
+      const CALENDLY_BOOKING_URL =
+        'https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach';
       let warmed = false;
 
       function appendHeadLink(attributes) {
@@ -158,21 +159,53 @@
         if (warmed) return;
         warmed = true;
 
+        try {
+          sessionStorage.setItem('sasb-calendly-warmed-at', String(Date.now()));
+        } catch (error) {
+          // Ignore storage issues in restricted browser contexts.
+        }
+
         appendHeadLink({ rel: 'prefetch', href: TERMIN_URL });
-        appendHeadLink({ rel: 'prefetch', href: CALENDLY_WIDGET_URL, as: 'script', crossorigin: 'anonymous' });
+        appendHeadLink({ rel: 'prefetch', href: CALENDLY_BOOKING_URL });
+
+        if (!document.getElementById('termin-warmup-frame')) {
+          const frame = document.createElement('iframe');
+          frame.id = 'termin-warmup-frame';
+          frame.src = TERMIN_URL;
+          frame.tabIndex = -1;
+          frame.setAttribute('aria-hidden', 'true');
+          frame.style.cssText =
+            'position:absolute;left:-9999px;bottom:0;width:1px;height:1px;opacity:0;pointer-events:none;border:0;';
+          document.body.appendChild(frame);
+        }
+
+        if (!document.getElementById('calendly-warmup-frame')) {
+          const frame = document.createElement('iframe');
+          frame.id = 'calendly-warmup-frame';
+          frame.src = CALENDLY_BOOKING_URL;
+          frame.tabIndex = -1;
+          frame.setAttribute('aria-hidden', 'true');
+          frame.style.cssText =
+            'position:absolute;left:-9999px;bottom:0;width:1px;height:1px;opacity:0;pointer-events:none;border:0;';
+          document.body.appendChild(frame);
+        }
       }
 
-      const nextButton = document.querySelector('a[href="../termin/"]');
+      const nextButton = document.querySelector('a[href="/SASB_CaseStudy/termin/"]');
       if (nextButton) {
         ['pointerenter', 'focus', 'touchstart'].forEach((eventName) => {
           nextButton.addEventListener(eventName, warmCalendly, { once: true, passive: true });
         });
       }
 
+      window.addEventListener('load', () => {
+        window.setTimeout(warmCalendly, 80);
+      }, { once: true });
+
       if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(warmCalendly, { timeout: 1600 });
+        window.requestIdleCallback(warmCalendly, { timeout: 700 });
       } else {
-        window.setTimeout(warmCalendly, 900);
+        window.setTimeout(warmCalendly, 300);
       }
     })();
   </script>
