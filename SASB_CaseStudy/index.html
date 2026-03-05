@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <script>
+  (() => {
+    try {
+      const stored = localStorage.getItem('lugh21-theme');
+      if (stored === 'dark' || stored === 'light') {
+        document.documentElement.setAttribute('data-theme', stored);
+      } else if (stored === 'system') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SASB | Wiederkehrende Störung?</title>
+  <meta name="description" content="Wiederkehrende Störungen kosten Zeit — weil vorhandenes Wissen im Moment der Störung nicht greifbar ist." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/SASB_CaseStudy/assets/style.css" />
+  <script src="/assets/theme.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="/SASB_CaseStudy/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        SASB
+      </a>
+      <nav class="steps" aria-label="Fortschritt">
+        <span class="step-dot active" aria-current="step" aria-label="Schritt 1">1</span>
+        <span class="step-line"></span>
+        <a class="step-dot" href="/SASB_CaseStudy/loesung/" aria-label="Schritt 2">2</a>
+        <span class="step-line"></span>
+        <a class="step-dot" href="/SASB_CaseStudy/ablauf/" aria-label="Schritt 3">3</a>
+        <span class="step-line"></span>
+        <a class="step-dot" href="/SASB_CaseStudy/termin/" aria-label="Schritt 4">4</a>
+      </nav>
+      <div class="links"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="reveal">
+        <p class="page-label">Schritt 1 von 4</p>
+        <h1>Wiederkehrende Störung. Das Wissen existiert — nur nicht dort, wo es gerade gebraucht wird.</h1>
+      </div>
+
+      <div class="card-grid reveal d2">
+
+        <article class="card">
+          <div class="card-icon red">01</div>
+          <h3>Fehlersuche von vorn — obwohl die Lösung existiert</h3>
+          <p>Bei einer wiederkehrenden Störung wird der Fehler an der Anlage oft komplett neu gesucht. Manchmal ist ein erfahrener Kollege dabei, der die Störung kennt und sofort die richtige Maßnahme nennt. Oft aber nicht.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon blue">02</div>
+          <h3>Erfahrung, die nicht immer greifbar ist</h3>
+          <p>Die besten Leute können nicht in jeder Schicht an jeder Anlage stehen. Ihr Wissen steckt in ihren Köpfen — und in Schichtbucheinträgen, die im Moment der Störung zu langsam auffindbar sind.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon green">03</div>
+          <h3>Alle Schichten verdienen das gleiche Wissen</h3>
+          <p>Der Diagnoseweg sollte nicht davon abhängen, wer gerade da ist. Jedes Team sollte Zugriff auf alles haben, was die Firma über diese Störung weiß.</p>
+        </article>
+
+      </div>
+
+      <nav class="wizard-nav reveal d3">
+        <span></span>
+        <a class="btn btn-next" href="/SASB_CaseStudy/loesung/">Was sich ändern kann &rarr;</a>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      &copy; 2026 SASB &middot; <a href="/beta-lab/">Beta Lab</a>
+    </div>
+  </footer>
+
+</body>
+</html>
