@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <script>
+  (() => {
+    try {
+      const stored = localStorage.getItem('lugh21-theme');
+      if (stored === 'dark' || stored === 'light') {
+        document.documentElement.setAttribute('data-theme', stored);
+      } else if (stored === 'system') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SASB | 6 Wochen Pilot</title>
+  <meta name="description" content="Der SASB-Pilot: 6 Wochen, 1 Engpassanlage, klare Messung — und wenn nichts besser wird, kostet es nichts." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
+  <link rel="preconnect" href="https://calendly.com" />
+  <link rel="dns-prefetch" href="//assets.calendly.com" />
+  <link rel="dns-prefetch" href="//calendly.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="../assets/theme.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../">
+        <span class="brand-dot" aria-hidden="true"></span>
+        SASB
+      </a>
+      <nav class="steps" aria-label="Fortschritt">
+        <a class="step-dot done" href="../" aria-label="Schritt 1">1</a>
+        <span class="step-line done"></span>
+        <a class="step-dot done" href="../loesung/" aria-label="Schritt 2">2</a>
+        <span class="step-line done"></span>
+        <span class="step-dot active" aria-current="step" aria-label="Schritt 3">3</span>
+        <span class="step-line done"></span>
+        <a class="step-dot" href="../termin/" aria-label="Schritt 4">4</a>
+      </nav>
+      <div class="links"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="reveal">
+        <p class="page-label">Schritt 3 von 4</p>
+        <h1>6 Wochen. 1 Anlage. Klare Antwort.</h1>
+        <p class="lead">Am Ende habt ihr eine Vorher-Nachher-Messung eurer Störzeiten — die ihr direkt in Stillstandskosten umrechnen könnt.</p>
+      </div>
+
+      <div class="timeline reveal d2">
+        <div class="tl-item">
+          <span class="tl-tag">Woche 0</span>
+          <div>
+            <h3>Datenübergabe</h3>
+            <p>Ihr schickt den Schichtbuch-Export. Setup und Import machen wir — datenschutzkonform und per Auftragsverarbeitung.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-tag">Woche 1</span>
+          <div>
+            <h3>Kickoff + Schichtstart</h3>
+            <p>45-Min Kickoff mit der Kern Feedback Gruppe. Danach offener Zugang für alle Schichten ab Tag 1.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-tag">Wo. 2–6</span>
+          <div>
+            <h3>Nutzung im Alltag</h3>
+            <p>Offener Zugang im Schichtbetrieb. 20 Min/Woche Review mit der Kern Feedback Gruppe.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-tag">Ende W6</span>
+          <div>
+            <h3>Auswertung</h3>
+            <p>KPI-Vergleich Störzeit Baseline vs. Pilot + mindestens 2 dokumentierte Trefferfälle.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="reveal d2" style="margin-top: 1.5rem;">Kern Feedback Gruppe</h2>
+      <div class="champions reveal d2">
+        <div class="champion">
+          <strong>Senior-IH</strong>
+          <span>Fachliche Validierung und Realitätscheck</span>
+        </div>
+        <div class="champion">
+          <strong>Junior / Azubi</strong>
+          <span>Maximaler Lern- und Wow-Hebel</span>
+        </div>
+        <div class="champion">
+          <strong>Schichtführer</strong>
+          <span>Weniger Eskalationen, schnellerer Wiederanlauf</span>
+        </div>
+      </div>
+
+      <div class="effort reveal d3">
+        <h3>Euer Aufwand</h3>
+        <ul>
+          <li>Einmaliger Datenexport schicken</li>
+          <li>45 Minuten Kickoff</li>
+          <li>20 Minuten pro Woche mit der Kern Feedback Gruppe</li>
+        </ul>
+        <p style="margin-top: 0.6rem; color: var(--muted); font-size: 0.88rem;">Alles andere — Import, Setup, Optimierung — machen wir.</p>
+      </div>
+
+      <div class="signal-box reveal d3">
+        <h3>Keine plausible Verbesserung? Dann zahlt ihr nichts.</h3>
+        <p>Wenn nach 6 Wochen keine messbare Verbesserung in der Störzeit erkennbar ist und wir keine 2 klaren Trefferfälle vorweisen können — kostet der Pilot 0&nbsp;&euro;.</p>
+      </div>
+
+      <nav class="wizard-nav reveal d3">
+        <a class="btn btn-back" href="../loesung/">&larr; Zurück</a>
+        <a class="btn btn-next" href="../termin/">Gespräch starten &rarr;</a>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      &copy; 2026 SASB &middot; <a href="/beta-lab/">Beta Lab</a>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const TERMIN_URL = '../termin/';
+      const CALENDLY_WIDGET_URL = 'https://assets.calendly.com/assets/external/widget.js';
+      let warmed = false;
+
+      function appendHeadLink(attributes) {
+        if (document.head.querySelector(`link[href="${attributes.href}"][rel="${attributes.rel}"]`)) return;
+
+        const link = document.createElement('link');
+        Object.entries(attributes).forEach(([key, value]) => {
+          link.setAttribute(key, value);
+        });
+        document.head.appendChild(link);
+      }
+
+      function warmCalendly() {
+        if (warmed) return;
+        warmed = true;
+
+        appendHeadLink({ rel: 'prefetch', href: TERMIN_URL });
+        appendHeadLink({ rel: 'prefetch', href: CALENDLY_WIDGET_URL, as: 'script', crossorigin: 'anonymous' });
+      }
+
+      const nextButton = document.querySelector('a[href="../termin/"]');
+      if (nextButton) {
+        ['pointerenter', 'focus', 'touchstart'].forEach((eventName) => {
+          nextButton.addEventListener(eventName, warmCalendly, { once: true, passive: true });
+        });
+      }
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(warmCalendly, { timeout: 1600 });
+      } else {
+        window.setTimeout(warmCalendly, 900);
+      }
+    })();
+  </script>
+
+</body>
+</html>
