@@ -565,6 +565,21 @@ h2 {
 
 .compare-box li + li { margin-top: 0.3rem; }
 
+.compare-time {
+  margin: 0.85rem 0 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.compare-time.positive {
+  color: var(--ok);
+}
+
+.compare-time.negative {
+  color: var(--warn);
+}
+
 /* === CASE CARDS === */
 .case-card {
   border-radius: var(--r);
@@ -749,6 +764,27 @@ h2 {
   margin: 1rem 0;
 }
 
+.form-card h2 {
+  margin-bottom: 0.35rem;
+}
+
+.form-intro {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.roi-transition {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 1.2rem 0 0;
+}
+
+.roi-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
 .form-card label {
   display: block;
   font-size: 0.8rem;
@@ -780,6 +816,37 @@ h2 {
 .form-card textarea:focus {
   outline: 2px solid rgba(59, 125, 255, 0.45);
   outline-offset: 1px;
+}
+
+.form-card input[type="number"]::-webkit-outer-spin-button,
+.form-card input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-card input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.roi-result {
+  margin-top: 0.75rem;
+}
+
+.roi-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--signal-soft);
+}
+
+.roi-result h3 span,
+.roi-result p span {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
 }
 
 /* === CALENDLY EMBED === */
@@ -1101,6 +1168,7 @@ h2 {
 @media (min-width: 640px) {
   .compare { grid-template-columns: 1fr 1fr; }
   .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .roi-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 400px) {

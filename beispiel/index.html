@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <script>
+  (() => {
+    try {
+      const stored = localStorage.getItem('lugh21-theme');
+      if (stored === 'dark' || stored === 'light') {
+        document.documentElement.setAttribute('data-theme', stored);
+      } else if (stored === 'system') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SASB | Praxisbeispiel & ROI</title>
+  <meta name="description" content="Ein konkretes Praxisbeispiel zeigt, wie dokumentiertes Schichtbuchwissen Minuten spart und den Effekt direkt in Euro sichtbar macht." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="../assets/theme.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../">
+        <span class="brand-dot" aria-hidden="true"></span>
+        SASB
+      </a>
+      <nav class="steps" aria-label="Fortschritt">
+        <a class="step-dot done" href="../" aria-label="Schritt 1">1</a>
+        <span class="step-line done"></span>
+        <a class="step-dot done" href="../loesung/" aria-label="Schritt 2">2</a>
+        <span class="step-line done"></span>
+        <span class="step-dot active" aria-current="step" aria-label="Schritt 3">3</span>
+        <span class="step-line"></span>
+        <a class="step-dot" href="../ablauf/" aria-label="Schritt 4">4</a>
+        <span class="step-line"></span>
+        <a class="step-dot" href="../termin/" aria-label="Schritt 5">5</a>
+      </nav>
+      <div class="links"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="reveal">
+        <p class="page-label">Schritt 3 von 5</p>
+        <h1>Nie wieder 20 Minuten suchen, wenn die Antwort schon dokumentiert ist.</h1>
+        <p class="lead">Wenn die Störung schon einmal gelöst wurde, sollte der Wiederanlauf nicht davon abhängen, wer gerade danebensteht.</p>
+      </div>
+
+      <div class="compare reveal d2">
+        <div class="compare-box negative">
+          <h3>Ohne Smart Agent</h3>
+          <ul>
+            <li>Der Kollege kennt die Störung nicht aus eigener Erfahrung.</li>
+            <li>Er sucht systematisch in SPS, Schaltplänen und Historie.</li>
+            <li>Die Anlage steht, bis die richtige Spur endlich gefunden ist.</li>
+          </ul>
+          <p class="compare-time negative">Ca. 20 Min bis die Anlage wieder läuft</p>
+        </div>
+
+        <div class="compare-box positive">
+          <h3>Mit Smart Agent</h3>
+          <ul>
+            <li>Der gleiche Kollege macht einen 30-Sekunden-Quick-Check im Assistenten.</li>
+            <li>Er sieht sofort: Genau diese Störung gab es schon einmal.</li>
+            <li>Die dokumentierte Lösung steht direkt vor ihm.</li>
+          </ul>
+          <p class="compare-time positive">Ca. 5 Min bis die Anlage wieder läuft</p>
+        </div>
+      </div>
+
+      <p class="note reveal d2">
+        Nicht jede Störung ist wiederkehrend. Aber wenn sie es ist, spart der Zugriff auf dokumentierte Lösungen massiv Zeit.
+      </p>
+
+      <p class="roi-transition reveal d3">
+        Wie oft passiert das bei euch? Selbst konservativ gerechnet — nur die Fälle, in denen die Störung schon einmal dokumentiert war — summieren sich schnell.
+      </p>
+
+      <section class="form-card reveal d3" aria-labelledby="roi-heading">
+        <h2 id="roi-heading">ROI grob überschlagen</h2>
+        <p class="form-intro">Die Voreinstellungen sind konservativ. Passt sie an eure Anlage an — der Rechner betrachtet nur dokumentierte Wiederholfälle.</p>
+
+        <div class="roi-grid" data-roi-form>
+          <div>
+            <label for="incidents">Störungen / Monat (Wiederholfälle, bei denen der Smart Agent wie oben Zeit spart)</label>
+            <input id="incidents" name="incidents" type="number" inputmode="numeric" min="0" max="500" step="1" value="12" />
+          </div>
+
+          <div>
+            <label for="minutes">Eingesparte Min. pro Störung (durch den Smart Agent, wie oben)</label>
+            <input id="minutes" name="minutes" type="number" inputmode="numeric" min="0" max="240" step="1" value="15" />
+          </div>
+
+          <div>
+            <label for="hourly-cost">Stillstandskosten / Std. in €</label>
+            <input id="hourly-cost" name="hourly-cost" type="number" inputmode="numeric" min="0" max="100000" step="1" value="3000" />
+          </div>
+
+          <div>
+            <label for="plant-count">Anzahl Anlagen</label>
+            <input id="plant-count" name="plant-count" type="number" inputmode="numeric" min="0" max="50" step="1" value="1" />
+          </div>
+        </div>
+      </section>
+
+      <div class="signal-box roi-result reveal d3" role="status" aria-live="polite" aria-atomic="true">
+        <p class="roi-eyebrow">Konservativ gerechnet</p>
+        <h3>Einsparung: <span data-roi-month>9.000&nbsp;&euro;</span> / Monat</h3>
+        <p><span data-roi-year>108.000&nbsp;&euro;</span> / Jahr, wenn dokumentierte Wiederholfälle schneller gelöst werden.</p>
+      </div>
+
+      <nav class="wizard-nav reveal d3">
+        <a class="btn btn-back" href="../loesung/">&larr; Zurück</a>
+        <a class="btn btn-next" href="../ablauf/">Wie der Pilot abläuft &rarr;</a>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      &copy; 2026 SASB &middot; <a href="/beta-lab/">Beta Lab</a>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const form = document.querySelector('[data-roi-form]');
+      const monthlyTarget = document.querySelector('[data-roi-month]');
+      const yearlyTarget = document.querySelector('[data-roi-year]');
+
+      if (!form || !monthlyTarget || !yearlyTarget) return;
+
+      const inputs = Array.from(form.querySelectorAll('input[type="number"]'));
+      const numberFormatter = new Intl.NumberFormat('de-DE');
+
+      function formatEuro(value) {
+        return `${numberFormatter.format(Math.round(value))}\u00A0€`;
+      }
+
+      function readValue(input, commit = false) {
+        const raw = input.value.trim().replace(',', '.');
+        if (raw === '') return 0;
+
+        let value = Number(raw);
+        if (!Number.isFinite(value)) {
+          value = 0;
+        }
+
+        const min = input.min === '' ? -Infinity : Number(input.min);
+        const max = input.max === '' ? Infinity : Number(input.max);
+        value = Math.min(Math.max(value, min), max);
+
+        if (input.step === '1') {
+          value = Math.round(value);
+        }
+
+        if (commit && input.value !== String(value)) {
+          input.value = String(value);
+        }
+
+        return value;
+      }
+
+      function updateResult() {
+        const incidents = readValue(document.getElementById('incidents'));
+        const minutes = readValue(document.getElementById('minutes'));
+        const hourlyCost = readValue(document.getElementById('hourly-cost'));
+        const plantCount = readValue(document.getElementById('plant-count'));
+
+        const monthly = incidents * (minutes / 60) * hourlyCost * plantCount;
+        const yearly = monthly * 12;
+
+        monthlyTarget.textContent = formatEuro(monthly);
+        yearlyTarget.textContent = formatEuro(yearly);
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener('input', () => {
+          const raw = input.value.trim();
+          if (raw !== '') {
+            readValue(input, true);
+          }
+          updateResult();
+        });
+
+        input.addEventListener('blur', () => {
+          if (input.value.trim() === '') {
+            updateResult();
+            return;
+          }
+
+          readValue(input, true);
+          updateResult();
+        });
+      });
+
+      updateResult();
+    })();
+  </script>
+
+</body>
+</html>

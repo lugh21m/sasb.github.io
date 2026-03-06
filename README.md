@@ -4,7 +4,7 @@ Statische Website fuer den SASB Case Study Funnel, optimiert fuer GitHub Pages.
 
 ## Build/Publish Logik
 
-Die Seiten werden aus einer einzigen Quellstruktur gebaut (`index.html`, `ablauf/`, `loesung/`, `termin/`, `beweis/`, `assets/`).
+Die Seiten werden aus einer einzigen Quellstruktur gebaut (`index.html`, `loesung/`, `beispiel/`, `ablauf/`, `termin/`, `beweis/`, `assets/`).
 
 Beim Deploy erzeugt `scripts/prepare-pages.sh` ein Publish-Artefakt in `_site/`, das beide Pfade bereitstellt:
 
@@ -17,6 +17,7 @@ So bleibt die Pflege ohne doppelte Dateien im Repository, waehrend bestehende Li
 
 - `index.html`
 - `loesung/index.html`
+- `beispiel/index.html`
 - `ablauf/index.html`
 - `termin/index.html`
 - `beweis/index.html`

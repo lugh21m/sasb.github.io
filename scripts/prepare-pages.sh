@@ -13,6 +13,7 @@ ROOT_FILES=(
 CONTENT_DIRS=(
   "ablauf"
   "assets"
+  "beispiel"
   "beweis"
   "loesung"
   "termin"

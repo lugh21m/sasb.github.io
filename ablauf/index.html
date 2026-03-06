@@ -22,6 +22,7 @@
   <title>SASB | 6 Wochen Pilot</title>
   <meta name="description" content="Der SASB-Pilot: 6 Wochen, 1 Engpassanlage, klare Messung — und wenn nichts besser wird, kostet es nichts." />
   <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
@@ -29,25 +30,27 @@
   <link rel="dns-prefetch" href="//assets.calendly.com" />
   <link rel="dns-prefetch" href="//calendly.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/SASB_CaseStudy/assets/style.css" />
-  <script src="/SASB_CaseStudy/assets/theme.js" defer></script>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="../assets/theme.js" defer></script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="brand" href="/SASB_CaseStudy/">
+      <a class="brand" href="../">
         <span class="brand-dot" aria-hidden="true"></span>
         SASB
       </a>
       <nav class="steps" aria-label="Fortschritt">
-        <a class="step-dot done" href="/SASB_CaseStudy/" aria-label="Schritt 1">1</a>
+        <a class="step-dot done" href="../" aria-label="Schritt 1">1</a>
         <span class="step-line done"></span>
-        <a class="step-dot done" href="/SASB_CaseStudy/loesung/" aria-label="Schritt 2">2</a>
+        <a class="step-dot done" href="../loesung/" aria-label="Schritt 2">2</a>
         <span class="step-line done"></span>
-        <span class="step-dot active" aria-current="step" aria-label="Schritt 3">3</span>
+        <a class="step-dot done" href="../beispiel/" aria-label="Schritt 3">3</a>
         <span class="step-line done"></span>
-        <a class="step-dot" href="/SASB_CaseStudy/termin/" aria-label="Schritt 4">4</a>
+        <span class="step-dot active" aria-current="step" aria-label="Schritt 4">4</span>
+        <span class="step-line"></span>
+        <a class="step-dot" href="../termin/" aria-label="Schritt 5">5</a>
       </nav>
       <div class="links"></div>
     </div>
@@ -57,7 +60,7 @@
     <div class="wrap">
 
       <div class="reveal">
-        <p class="page-label">Schritt 3 von 4</p>
+        <p class="page-label">Schritt 4 von 5</p>
         <h1>6 Wochen. 1 Anlage. Klare Antwort.</h1>
         <p class="lead">Am Ende habt ihr eine Vorher-Nachher-Messung eurer Störzeiten — die ihr direkt in Stillstandskosten umrechnen könnt.</p>
       </div>
@@ -125,8 +128,8 @@
       </div>
 
       <nav class="wizard-nav reveal d3">
-        <a class="btn btn-back" href="/SASB_CaseStudy/loesung/">&larr; Zurück</a>
-        <a class="btn btn-next" href="/SASB_CaseStudy/termin/">Gespräch starten &rarr;</a>
+        <a class="btn btn-back" href="../beispiel/">&larr; Zurück</a>
+        <a class="btn btn-next" href="../termin/">Gespräch starten &rarr;</a>
       </nav>
 
     </div>
@@ -140,7 +143,7 @@
 
   <script>
     (() => {
-      const TERMIN_URL = '/SASB_CaseStudy/termin/';
+      const TERMIN_URL = '../termin/';
       const CALENDLY_BOOKING_URL =
         'https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach';
       let warmed = false;
@@ -191,7 +194,7 @@
         }
       }
 
-      const nextButton = document.querySelector('a[href="/SASB_CaseStudy/termin/"]');
+      const nextButton = document.querySelector('a[href="../termin/"]');
       if (nextButton) {
         ['pointerenter', 'focus', 'touchstart'].forEach((eventName) => {
           nextButton.addEventListener(eventName, warmCalendly, { once: true, passive: true });
