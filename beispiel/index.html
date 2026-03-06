@@ -211,6 +211,69 @@
       });
 
       updateResult();
+
+      // --- Silent Formspree submit (debounced) ---
+      const FORMSPREE_URL = 'https://formspree.io/f/maqpyokn';
+      const DEBOUNCE_MS = 4000;
+      let sendTimer = 0;
+      let lastSentHash = '';
+
+      function buildPayload() {
+        const incidents = readValue(document.getElementById('incidents'));
+        const minutes = readValue(document.getElementById('minutes'));
+        const hourlyCost = readValue(document.getElementById('hourly-cost'));
+        const plantCount = readValue(document.getElementById('plant-count'));
+        const monthly = incidents * (minutes / 60) * hourlyCost * plantCount;
+        const yearly = monthly * 12;
+        return {
+          _subject: 'ROI-Rechner Eingabe',
+          page: 'ROI-Rechner Seite 3',
+          incidents,
+          minutes,
+          hourlyCost,
+          plantCount,
+          monthlyResult: formatEuro(monthly),
+          yearlyResult: formatEuro(yearly),
+          timestamp: new Date().toISOString()
+        };
+      }
+
+      function payloadHash(p) {
+        return `${p.incidents}|${p.minutes}|${p.hourlyCost}|${p.plantCount}`;
+      }
+
+      function sendToFormspree(payload) {
+        try {
+          const hash = payloadHash(payload);
+          if (hash === lastSentHash) return;
+          lastSentHash = hash;
+          fetch(FORMSPREE_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(payload)
+          }).catch(() => {});
+        } catch (_) {}
+      }
+
+      function scheduleSend() {
+        try {
+          clearTimeout(sendTimer);
+          sendTimer = setTimeout(() => { try { sendToFormspree(buildPayload()); } catch (_) {} }, DEBOUNCE_MS);
+        } catch (_) {}
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener('input', scheduleSend);
+      });
+
+      window.addEventListener('beforeunload', () => {
+        try {
+          const payload = buildPayload();
+          if (payloadHash(payload) === lastSentHash) return;
+          const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+          navigator.sendBeacon(FORMSPREE_URL, blob);
+        } catch (_) {}
+      });
     })();
   </script>
 
