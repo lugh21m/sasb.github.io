@@ -1253,16 +1253,29 @@ h2 {
 @media (max-width: 560px) {
   .header-row {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr;
     align-items: center;
-    row-gap: 0.45rem;
-    padding: 0.55rem 0;
+    justify-items: center;
+    row-gap: 0.55rem;
+    padding: 0.6rem 0 0.85rem;
     min-height: auto;
   }
 
+  .brand {
+    width: 100%;
+    justify-self: start;
+  }
+
   .steps {
-    grid-column: 1 / -1;
+    width: 100%;
     justify-content: center;
+  }
+
+  .links {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    margin-top: 0.1rem;
   }
 }
 

@@ -23,6 +23,18 @@ So bleibt die Pflege ohne doppelte Dateien im Repository, waehrend bestehende Li
 - `beweis/index.html`
 - `assets/style.css`
 - `assets/theme.js`
+- `assets/tracking-config.js`
+- `assets/tracking.js`
+- `docs/pipedream-telegram-leads.md`
+- `integrations/pipedream/`
+
+## Lead-Tracking
+
+CTA-Klicks werden ueber ein gemeinsames Frontend-Script erfasst und koennen an einen oeffentlichen Webhook weitergeleitet werden. Die Telegram- und Calendly-Anbindung wird extern ueber Pipedream umgesetzt.
+
+Setup-Doku:
+
+- `docs/pipedream-telegram-leads.md`
 
 ## Deployment (GitHub Pages)
 

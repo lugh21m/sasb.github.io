@@ -1,0 +1,185 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "SASB" [ref=e4] [cursor=pointer]:
+        - /url: ../
+        - text: SASB
+      - navigation "Fortschritt" [ref=e6]:
+        - link "Schritt 1" [ref=e7] [cursor=pointer]:
+          - /url: ../
+          - text: "1"
+        - link "Schritt 2" [ref=e9] [cursor=pointer]:
+          - /url: ../loesung/
+          - text: "2"
+        - link "Schritt 3" [ref=e11] [cursor=pointer]:
+          - /url: ../beispiel/
+          - text: "3"
+        - generic "Schritt 4" [ref=e13]: "4"
+        - link "Schritt 5" [ref=e15] [cursor=pointer]:
+          - /url: ../termin/
+          - text: "5"
+      - link "Gespräch starten" [ref=e17] [cursor=pointer]:
+        - /url: https://sasb.site/termin/
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: Schritt 4 von 5
+        - heading "6 Wochen. 1 definierte Linie. Klare Antwort." [level=1] [ref=e22]
+        - paragraph [ref=e23]: "Ein klar abgegrenzter Pilot: 1 definierte Linie, 6 Wochen, 3.000 € Fixpreis. Hybrid begleitet — Start vor Ort im Werk, der Rest remote. Am Ende steht eine belastbare Vorher-Nachher-Auswertung."
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]: Woche 0
+          - generic [ref=e27]:
+            - heading "Scope & Datenübergabe" [level=3] [ref=e28]
+            - paragraph [ref=e29]: Scope-Zuschnitt auf eine definierte Linie. Aufnahme der Ausgangslage. Ihr liefert den Schichtbuch-Export — Setup und Import übernehmen wir, datenschutzkonform per Auftragsverarbeitung.
+        - generic [ref=e30]:
+          - generic [ref=e31]: Woche 1
+          - generic [ref=e32]:
+            - heading "Vor-Ort-Start + Inbetriebnahme" [level=3] [ref=e33]
+            - paragraph [ref=e34]: Vor-Ort-Termin zur Einführung und Inbetriebnahme mit der Kern Feedback Gruppe. Browserbasierter Zugang für alle Schichten ab Tag 1. Alle weiteren Begleitungen laufen remote.
+        - generic [ref=e35]:
+          - generic [ref=e36]: Wo. 2–6
+          - generic [ref=e37]:
+            - heading "Nutzung im Alltag" [level=3] [ref=e38]
+            - paragraph [ref=e39]: Offener Zugang im Schichtbetrieb. Wöchentliche kurze Review-Schleife remote. 20 Min/Woche mit der Kern Feedback Gruppe.
+        - generic [ref=e40]:
+          - generic [ref=e41]: Ende W6
+          - generic [ref=e42]:
+            - heading "Abschlussauswertung" [level=3] [ref=e43]
+            - paragraph [ref=e44]: "Vorher-/Nachher-Betrachtung: Veränderung der Such- und Wiederanlaufzeit bei dokumentierten Wiederholfällen. Operative und grob wirtschaftliche Einordnung. Dokumentation relevanter Trefferfälle."
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - heading "Im Pilot enthalten" [level=3] [ref=e47]
+          - list [ref=e48]:
+            - listitem [ref=e49]: Scope-Zuschnitt auf eine definierte Linie
+            - listitem [ref=e50]: Aufnahme der Ausgangslage
+            - listitem [ref=e51]: Einmaliger Datenimport
+            - listitem [ref=e52]: Setup der Pilotumgebung
+            - listitem [ref=e53]: 1 Vor-Ort-Termin zur Einführung
+            - listitem [ref=e54]: Browserbasierter Zugang für alle Schichten
+            - listitem [ref=e55]: Remote-Begleitung inkl. wöchentlicher Review-Schleifen
+            - listitem [ref=e56]: Kleinere Anpassungen im vereinbarten Scope
+            - listitem [ref=e57]: Abschlussauswertung und Dokumentation
+        - generic [ref=e58]:
+          - heading "Bewusst nicht enthalten" [level=3] [ref=e59]
+          - list [ref=e60]:
+            - listitem [ref=e61]: Ausweitung auf weitere Linien, Bereiche oder Werke
+            - listitem [ref=e62]: Sonderintegrationen oder Individualentwicklung
+            - listitem [ref=e63]: Weitere Vor-Ort-Termine im Standardscope
+            - listitem [ref=e64]: Dauerhafter Produktivbetrieb nach dem Pilot
+      - heading "Kern Feedback Gruppe" [level=2] [ref=e65]
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - strong [ref=e68]: Senior-IH
+          - generic [ref=e69]: Fachliche Validierung und Realitätscheck
+        - generic [ref=e70]:
+          - strong [ref=e71]: Junior / Azubi
+          - generic [ref=e72]: Maximaler Lern- und Wow-Hebel
+        - generic [ref=e73]:
+          - strong [ref=e74]: Schichtführer
+          - generic [ref=e75]: Weniger Eskalationen, schnellerer Wiederanlauf
+      - generic [ref=e76]:
+        - heading "Euer Aufwand" [level=3] [ref=e77]
+        - list [ref=e78]:
+          - listitem [ref=e79]: Einmaliger Datenexport schicken
+          - listitem [ref=e80]: 1 Vor-Ort-Termin zum Start (halber Tag)
+          - listitem [ref=e81]: 20 Minuten pro Woche remote mit der Kern Feedback Gruppe
+        - paragraph [ref=e82]: Setup, Import, Begleitung und Auswertung — alles weitere machen wir.
+      - generic [ref=e83]:
+        - heading "Klar abgegrenzt — ohne Folgezwang." [level=3] [ref=e84]
+        - paragraph [ref=e85]: Der Pilot endet nach 6 Wochen mit einer ehrlichen Auswertung. Scope, Preis und Dauer sind fest definiert. Wenn die Auswertung keinen belastbaren Nutzen zeigt, gibt es keinen Druck für einen Rollout.
+      - navigation [ref=e86]:
+        - link "← Zurück" [ref=e87] [cursor=pointer]:
+          - /url: ../beispiel/
+        - link "Gespräch starten →" [ref=e88] [cursor=pointer]:
+          - /url: ../termin/
+  - contentinfo [ref=e89]:
+    - generic [ref=e90]:
+      - text: © 2026 SASB ·
+      - link "Pilotprogramm 2026" [ref=e91] [cursor=pointer]:
+        - /url: /beta-lab/
+  - iframe [ref=e92]:
+    - generic [active] [ref=f1e1]:
+      - banner [ref=f1e2]:
+        - generic:
+          - link "SASB" [ref=f1e3] [cursor=pointer]:
+            - /url: ../
+            - text: SASB
+          - navigation "Fortschritt" [ref=f1e5]:
+            - link "Schritt 1" [ref=f1e6] [cursor=pointer]:
+              - /url: ../
+              - text: "1"
+            - link "Schritt 2" [ref=f1e8] [cursor=pointer]:
+              - /url: ../loesung/
+              - text: "2"
+            - link "Schritt 3" [ref=f1e10] [cursor=pointer]:
+              - /url: ../beispiel/
+              - text: "3"
+            - link "Schritt 4" [ref=f1e12] [cursor=pointer]:
+              - /url: ../ablauf/
+              - text: "4"
+            - generic "Schritt 5" [ref=f1e14]: "5"
+          - generic [ref=f1e15]:
+            - generic: Gespräch starten
+      - main [ref=f1e16]:
+        - generic:
+          - generic:
+            - paragraph: Schritt 5 von 5
+            - heading "15 Minuten reichen für eine erste Einschätzung." [level=1]
+            - paragraph: Ich zeige euch anhand eurer Anlage, was realistisch drin ist. Kein Verkaufsgespräch. Nur ein technischer Realitätscheck.
+          - heading "Das klären wir" [level=2]
+          - list:
+            - listitem [ref=f1e17]: Welche Störungstypen regelmäßig Fehlersuche verursachen
+            - listitem [ref=f1e18]: Ob Linie und Datengrundlage für einen Pilot geeignet sind
+            - listitem [ref=f1e19]: Welche Datenquellen für den Pilot genutzt werden können
+            - listitem [ref=f1e20]: Welche Kennzahl im Werk als Erfolg zählt
+            - listitem [ref=f1e21]: Ob ein Pilot sofort Sinn ergibt oder erst Datenvorbereitung nötig ist
+          - paragraph:
+            - text: "Direktkontakt:"
+            - link "+49 172 9175743" [ref=f1e22] [cursor=pointer]:
+              - /url: tel:+491729175743
+            - text: ·
+            - link "contact@lugh21.com" [ref=f1e23] [cursor=pointer]:
+              - /url: mailto:contact@lugh21.com
+          - generic [ref=f1e24]:
+            - status:
+              - generic: Kalender wird geladen …
+            - iframe [ref=f1e25]:
+              
+          - paragraph: Oder direkt Kontakt aufnehmen
+          - generic:
+            - link "ROI-Check per E-Mail anfragen" [ref=f1e26] [cursor=pointer]:
+              - /url: mailto:contact@lugh21.com?subject=SASB%20ROI-Check&body=Hallo%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20einen%20SASB-Pilot%20an%20unserer%20Engpassanlage.%0A%0AWerk%20%2F%20Standort%3A%20%0AAnlagentyp%3A%20%0AHauptproblem%3A%20%0A%0ADanke!
+            - 'link "WhatsApp: +49 172 9175743" [ref=f1e27] [cursor=pointer]':
+              - /url: https://wa.me/491729175743
+          - paragraph:
+            - text: "Gastartikel auf LinkedIn erschienen: \"Warum die Antwort auf die meisten Druckluftstörungen bereits existiert.\""
+            - link "Artikel lesen →" [ref=f1e28] [cursor=pointer]:
+              - /url: https://www.linkedin.com/pulse/warum-die-antwort-auf-meisten-druckluftst%25C3%25B6rungen-bereits-roland-rau-6jkvf/?trackingId=XTIV3SOFQDy%2BNNvETCye4g%3D%3D
+          - generic [ref=f1e29]: "Kein Verkaufsgespräch. Nur ein technischer Realitätscheck — anhand eurer konkreten Linie und eurer Daten. Der Pilot ist klar umrissen: 6 Wochen, 1 definierte Linie, 3.000 € Fixpreis. Kein Folgezwang."
+          - generic [ref=f1e30]:
+            - 'heading "Datenschutz & Mitbestimmung: mitgedacht" [level=3]'
+            - list:
+              - listitem [ref=f1e31]: Auftragsverarbeitung & Sicherheitsmaßnahmen als Standard
+              - listitem [ref=f1e32]: Keine Nutzung eurer Daten fürs Modelltraining
+              - listitem [ref=f1e33]: Betriebsrat-Themen frühzeitig adressierbar — Vorlagen verfügbar
+          - generic:
+            - heading "Häufige Fragen zu Datenschutz & KI" [level=3]
+            - group [ref=f1e34]:
+              - generic "▶ Arbeitet ihr DSGVO-konform?" [ref=f1e35] [cursor=pointer]
+            - group [ref=f1e36]:
+              - generic "▶ Was passiert mit unseren Schichtbuchdaten?" [ref=f1e37] [cursor=pointer]
+            - group [ref=f1e38]:
+              - generic "▶ Werden unsere Daten zum Modelltraining genutzt?" [ref=f1e39] [cursor=pointer]
+            - group [ref=f1e40]:
+              - generic "▶ Wie steht es mit dem Betriebsrat?" [ref=f1e41] [cursor=pointer]
+          - navigation:
+            - link "← Zurück" [ref=f1e42] [cursor=pointer]:
+              - /url: ../ablauf/
+      - contentinfo [ref=f1e43]:
+        - generic:
+          - text: © 2026 SASB ·
+          - link "Pilotprogramm 2026" [ref=f1e44] [cursor=pointer]:
+            - /url: /beta-lab/
+  - iframe [ref=e93]:
+    

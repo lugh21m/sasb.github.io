@@ -31,6 +31,8 @@
   <link rel="dns-prefetch" href="//calendly.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/style.css" />
+  <script src="../assets/tracking-config.js"></script>
+  <script src="../assets/tracking.js"></script>
   <script src="../assets/theme.js" defer></script>
 </head>
 <body>
@@ -78,9 +80,9 @@
 
       <p class="contact-inline reveal d2">
         Direktkontakt:
-        <a href="tel:+491729175743">+49 172 9175743</a>
+        <a href="tel:+491729175743" data-track-id="contact-phone-inline">+49 172 9175743</a>
         <span aria-hidden="true">&middot;</span>
-        <a href="mailto:contact@lugh21.com">contact@lugh21.com</a>
+        <a href="mailto:contact@lugh21.com" data-track-id="contact-email-inline">contact@lugh21.com</a>
       </p>
 
       <div class="calendly-container reveal d2" data-calendly-state="loading">
@@ -89,7 +91,7 @@
         </div>
         <iframe
           class="calendly-embed-frame"
-          src="https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach"
+          data-calendly-base-url="https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach"
           title="Termin buchen"
           loading="eager"
           frameborder="0"
@@ -100,10 +102,10 @@
       <p class="contact-divider reveal d2">Oder direkt Kontakt aufnehmen</p>
 
       <div class="contact-alt reveal d3">
-        <a class="btn btn-mail" href="mailto:contact@lugh21.com?subject=SASB%20ROI-Check&amp;body=Hallo%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20einen%20SASB-Pilot%20an%20unserer%20Engpassanlage.%0A%0AWerk%20%2F%20Standort%3A%20%0AAnlagentyp%3A%20%0AHauptproblem%3A%20%0A%0ADanke!">
+        <a class="btn btn-mail" href="mailto:contact@lugh21.com?subject=SASB%20ROI-Check&amp;body=Hallo%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20einen%20SASB-Pilot%20an%20unserer%20Engpassanlage.%0A%0AWerk%20%2F%20Standort%3A%20%0AAnlagentyp%3A%20%0AHauptproblem%3A%20%0A%0ADanke!" data-track-id="contact-email-button">
           ROI-Check per E-Mail anfragen
         </a>
-        <a class="btn btn-whatsapp" href="https://wa.me/491729175743" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn-whatsapp" href="https://wa.me/491729175743" target="_blank" rel="noopener noreferrer" data-track-id="contact-whatsapp-button">
           WhatsApp: +49 172 9175743
         </a>
       </div>
@@ -172,6 +174,7 @@
       if (!container || !frame || !loadingText) return;
 
       const bookingUrl =
+        document.documentElement.dataset.sasbCalendlyUrl ||
         frame.getAttribute('src') ||
         'https://calendly.com/lughvergenz/15-minuten-sasb-case-study-telefon-gesprach';
       let settled = false;
@@ -201,6 +204,9 @@
       }
 
       frame.addEventListener('load', markReady, { once: true });
+      if (!frame.getAttribute('src')) {
+        frame.setAttribute('src', bookingUrl);
+      }
 
       timeoutId = window.setTimeout(() => {
         markError();

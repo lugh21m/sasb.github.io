@@ -1,0 +1,49 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "SASB" [ref=e4] [cursor=pointer]:
+        - /url: ./
+        - text: SASB
+      - navigation "Fortschritt" [ref=e6]:
+        - generic "Schritt 1" [ref=e7]: "1"
+        - link "Schritt 2" [ref=e9] [cursor=pointer]:
+          - /url: loesung/
+          - text: "2"
+        - link "Schritt 3" [ref=e11] [cursor=pointer]:
+          - /url: beispiel/
+          - text: "3"
+        - link "Schritt 4" [ref=e13] [cursor=pointer]:
+          - /url: ablauf/
+          - text: "4"
+        - link "Schritt 5" [ref=e15] [cursor=pointer]:
+          - /url: termin/
+          - text: "5"
+      - link "Gespräch starten" [ref=e17] [cursor=pointer]:
+        - /url: https://sasb.site/termin/
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: Schritt 1 von 5
+        - heading "Wiederkehrende Störung. Das Wissen existiert — nur nicht dort, wo es gerade gebraucht wird." [level=1] [ref=e22]
+        - paragraph [ref=e23]: Entwickelt von einem Instandhaltungstechniker. Audi, Karosseriebau.
+      - generic [ref=e24]:
+        - article [ref=e25]:
+          - generic [ref=e26]: "01"
+          - heading "Fehlersuche von vorn — obwohl die Lösung existiert" [level=3] [ref=e27]
+          - paragraph [ref=e28]: Bei einer wiederkehrenden Störung wird der Fehler an der Anlage oft komplett neu gesucht. Manchmal ist ein erfahrener Kollege dabei, der die Störung kennt und sofort die richtige Maßnahme nennt. Oft aber nicht.
+        - article [ref=e29]:
+          - generic [ref=e30]: "02"
+          - heading "Erfahrung, die nicht immer greifbar ist" [level=3] [ref=e31]
+          - paragraph [ref=e32]: Die besten Leute können nicht in jeder Schicht an jeder Anlage stehen. Ihr Wissen steckt in ihren Köpfen — und in Schichtbucheinträgen, die im Moment der Störung zu langsam auffindbar sind.
+        - article [ref=e33]:
+          - generic [ref=e34]: "03"
+          - heading "Alle Schichten verdienen das gleiche Wissen" [level=3] [ref=e35]
+          - paragraph [ref=e36]: Der Diagnoseweg sollte nicht davon abhängen, wer gerade da ist. Jedes Team sollte Zugriff auf alles haben, was die Firma über diese Störung weiß.
+      - navigation [ref=e37]:
+        - link "Was sich ändern kann →" [ref=e38] [cursor=pointer]:
+          - /url: loesung/
+  - contentinfo [ref=e39]:
+    - generic [ref=e40]:
+      - text: © 2026 SASB ·
+      - link "Pilotprogramm 2026" [ref=e41] [cursor=pointer]:
+        - /url: /beta-lab/
