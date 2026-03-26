@@ -7,7 +7,7 @@ Dieses Repo trackt CTA-Klicks rein clientseitig und sendet sie an einen oeffentl
 
 ## 1. Frontend konfigurieren
 
-In [assets/tracking-config.js](/Users/lugh/Documents/WebsiteProjekte/SASB_CaseStudy_Website/assets/tracking-config.js) den Wert `clickEndpoint` mit der HTTP-URL des Pipedream-Workflows `click-ingest` fuellen.
+In `assets/tracking-config.js` den Wert `clickEndpoint` mit der HTTP-URL des Pipedream-Workflows `click-ingest` fuellen.
 
 ```js
 clickEndpoint: "https://your-click-endpoint.m.pipedream.net",
@@ -20,7 +20,7 @@ Wenn `clickEndpoint` leer bleibt, verhaelt sich die Seite normal weiter und send
 1. In Pipedream einen Workflow mit `HTTP / Webhook` Trigger anlegen.
 2. Den Triggernamen auf `trigger` lassen.
 3. Dahinter einen `Node.js`-Step anlegen.
-4. Den Inhalt aus [integrations/pipedream/click-ingest.mjs](/Users/lugh/Documents/WebsiteProjekte/SASB_CaseStudy_Website/integrations/pipedream/click-ingest.mjs) in den Step kopieren.
+4. Den Inhalt aus `integrations/pipedream/click-ingest.mjs` in den Step kopieren.
 5. Im Step diese Props setzen:
 
 - `telegramBotToken`: Telegram Bot Token von `@BotFather`
@@ -43,7 +43,7 @@ Erlaubte `action_id` Werte im Workflow:
 1. Zweiten Pipedream-Workflow mit `HTTP / Webhook` Trigger anlegen.
 2. Triggernamen ebenfalls `trigger` lassen.
 3. Dahinter einen `Node.js`-Step anlegen.
-4. Den Inhalt aus [integrations/pipedream/calendly-ingest.mjs](/Users/lugh/Documents/WebsiteProjekte/SASB_CaseStudy_Website/integrations/pipedream/calendly-ingest.mjs) in den Step kopieren.
+4. Den Inhalt aus `integrations/pipedream/calendly-ingest.mjs` in den Step kopieren.
 5. Diese Props setzen:
 
 - `telegramBotToken`
@@ -84,6 +84,6 @@ Wenn nur das eigene Konto beobachtet werden soll, statt `organization` die passe
 
 - Klick auf Header-CTA auf Startseite pruefen: Telegram sollte genau eine Nachricht senden.
 - Doppelklick auf denselben CTA pruefen: nur eine Nachricht.
-- Klick auf WhatsApp und E-Mail auf [termin/index.html](/Users/lugh/Documents/WebsiteProjekte/SASB_CaseStudy_Website/termin/index.html) pruefen.
+- Klick auf WhatsApp und E-Mail auf `termin/index.html` pruefen.
 - Testbuchung in Calendly erstellen und auf `invitee.created` pruefen.
 - Teststorno in Calendly erstellen und auf `invitee.canceled` pruefen.

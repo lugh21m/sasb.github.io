@@ -94,19 +94,6 @@
     });
   }
 
-  function getHeader(headers, name) {
-    if (!headers || typeof headers !== "object") return "";
-
-    const direct = headers[name];
-    if (typeof direct === "string") return direct;
-
-    const lowerKey = Object.keys(headers).find(
-      (key) => key.toLowerCase() === name.toLowerCase()
-    );
-
-    return lowerKey ? String(headers[lowerKey] || "") : "";
-  }
-
   function shouldTrackEndpoint() {
     return /^https?:\/\//i.test(clickEndpoint);
   }
@@ -230,6 +217,5 @@
         ...payload,
       });
     },
-    getRequestHeaders: getHeader,
   };
 })();

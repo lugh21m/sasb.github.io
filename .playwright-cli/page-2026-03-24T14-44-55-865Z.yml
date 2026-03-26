@@ -1,0 +1,82 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "SASB" [ref=e4] [cursor=pointer]:
+        - /url: ../
+        - text: SASB
+      - navigation "Fortschritt" [ref=e6]:
+        - link "Schritt 1" [ref=e7] [cursor=pointer]:
+          - /url: ../
+          - text: "1"
+        - link "Schritt 2" [ref=e9] [cursor=pointer]:
+          - /url: ../loesung/
+          - text: "2"
+        - link "Schritt 3" [ref=e11] [cursor=pointer]:
+          - /url: ../beispiel/
+          - text: "3"
+        - link "Schritt 4" [ref=e13] [cursor=pointer]:
+          - /url: ../ablauf/
+          - text: "4"
+        - generic "Schritt 5" [ref=e15]: "5"
+      - generic [ref=e16]:
+        - generic: Gespräch starten
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: Schritt 5 von 5
+        - heading "15 Minuten reichen für eine erste Einschätzung." [level=1] [ref=e21]
+        - paragraph [ref=e22]: Ich zeige euch anhand eurer Anlage, was realistisch drin ist. Kein Verkaufsgespräch. Nur ein technischer Realitätscheck.
+      - heading "Das klären wir" [level=2] [ref=e23]
+      - list [ref=e24]:
+        - listitem [ref=e25]: Welche Störungstypen regelmäßig Fehlersuche verursachen
+        - listitem [ref=e26]: Ob Linie und Datengrundlage für einen Pilot geeignet sind
+        - listitem [ref=e27]: Welche Datenquellen für den Pilot genutzt werden können
+        - listitem [ref=e28]: Welche Kennzahl im Werk als Erfolg zählt
+        - listitem [ref=e29]: Ob ein Pilot sofort Sinn ergibt oder erst Datenvorbereitung nötig ist
+      - paragraph [ref=e30]:
+        - text: "Direktkontakt:"
+        - link "+49 172 9175743" [ref=e31] [cursor=pointer]:
+          - /url: tel:+491729175743
+        - text: ·
+        - link "contact@lugh21.com" [ref=e32] [cursor=pointer]:
+          - /url: mailto:contact@lugh21.com
+      - generic [ref=e33]:
+        - status:
+          - generic: Kalender wird geladen …
+        - iframe [ref=e34]:
+          
+      - paragraph [ref=e35]: Oder direkt Kontakt aufnehmen
+      - generic [ref=e36]:
+        - link "ROI-Check per E-Mail anfragen" [ref=e37] [cursor=pointer]:
+          - /url: mailto:contact@lugh21.com?subject=SASB%20ROI-Check&body=Hallo%2C%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20einen%20SASB-Pilot%20an%20unserer%20Engpassanlage.%0A%0AWerk%20%2F%20Standort%3A%20%0AAnlagentyp%3A%20%0AHauptproblem%3A%20%0A%0ADanke!
+        - 'link "WhatsApp: +49 172 9175743" [ref=e38] [cursor=pointer]':
+          - /url: https://wa.me/491729175743
+      - paragraph [ref=e39]:
+        - text: "Gastartikel auf LinkedIn erschienen: \"Warum die Antwort auf die meisten Druckluftstörungen bereits existiert.\""
+        - link "Artikel lesen →" [ref=e40] [cursor=pointer]:
+          - /url: https://www.linkedin.com/pulse/warum-die-antwort-auf-meisten-druckluftst%25C3%25B6rungen-bereits-roland-rau-6jkvf/?trackingId=XTIV3SOFQDy%2BNNvETCye4g%3D%3D
+      - generic [ref=e41]: "Kein Verkaufsgespräch. Nur ein technischer Realitätscheck — anhand eurer konkreten Linie und eurer Daten. Der Pilot ist klar umrissen: 6 Wochen, 1 definierte Linie, 3.000 € Fixpreis. Kein Folgezwang."
+      - generic [ref=e42]:
+        - 'heading "Datenschutz & Mitbestimmung: mitgedacht" [level=3] [ref=e43]'
+        - list [ref=e44]:
+          - listitem [ref=e45]: Auftragsverarbeitung & Sicherheitsmaßnahmen als Standard
+          - listitem [ref=e46]: Keine Nutzung eurer Daten fürs Modelltraining
+          - listitem [ref=e47]: Betriebsrat-Themen frühzeitig adressierbar — Vorlagen verfügbar
+      - generic [ref=e48]:
+        - heading "Häufige Fragen zu Datenschutz & KI" [level=3] [ref=e49]
+        - group [ref=e50]:
+          - generic "▶ Arbeitet ihr DSGVO-konform?" [ref=e51] [cursor=pointer]
+        - group [ref=e52]:
+          - generic "▶ Was passiert mit unseren Schichtbuchdaten?" [ref=e53] [cursor=pointer]
+        - group [ref=e54]:
+          - generic "▶ Werden unsere Daten zum Modelltraining genutzt?" [ref=e55] [cursor=pointer]
+        - group [ref=e56]:
+          - generic "▶ Wie steht es mit dem Betriebsrat?" [ref=e57] [cursor=pointer]
+      - navigation [ref=e58]:
+        - link "← Zurück" [ref=e59] [cursor=pointer]:
+          - /url: ../ablauf/
+  - contentinfo [ref=e60]:
+    - generic [ref=e61]:
+      - text: © 2026 SASB ·
+      - link "Pilotprogramm 2026" [ref=e62] [cursor=pointer]:
+        - /url: /beta-lab/
